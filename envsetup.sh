@@ -521,7 +521,7 @@ function print_lunch_menu()
     done | column
 
     if [ "z${NEXT_DEVICES_ONLY}" != "z" ]; then
-       echo "... and don't forget the bacon!"
+       echo "... and don't forget the next-os!"
     fi
 
     echo
@@ -531,7 +531,7 @@ function brunch()
 {
     breakfast $*
     if [ $? -eq 0 ]; then
-        mka bacon
+        mka next
     else
         echo "No such item in brunch menu. Try 'breakfast'"
         return 1
@@ -1709,7 +1709,7 @@ function cmka() {
     if [ ! -z "$1" ]; then
         for i in "$@"; do
             case $i in
-                bacon|otapackage|systemimage)
+                next|otapackage|systemimage)
                     mka installclean
                     mka $i
                     ;;
